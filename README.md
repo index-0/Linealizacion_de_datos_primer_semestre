@@ -43,5 +43,5 @@ Para usar el siguiente script es necesario:
 
 6.- Visualizar la grafica (Opcional)
 
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/3.png)
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_2.png)
 
