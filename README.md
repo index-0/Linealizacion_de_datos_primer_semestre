@@ -32,3 +32,16 @@ Para usar el siguiente script es necesario:
 | x<sub>10</sub> = 1 m  | y<sub>10</sub> = 2.44975 s |
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/2.png)
+
+4.- Visualizar la grafica (Opcional)
+
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_1.png)
+
+5.- Decidir la ecuacion que desee (En este caso usaremos 'y' debido a que queremos obtener x(t))
+
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/3.png)
+
+6.- Visualizar la grafica (Opcional)
+
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/3.png)
+
