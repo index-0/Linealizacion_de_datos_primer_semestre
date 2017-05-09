@@ -12,7 +12,7 @@ Para usar el siguiente script es necesario:
 
 1.- Ejecutar el script
 
-`python minimos_cuadrados.py'
+`python minimos_cuadrados.py`
 
 2.- Insertar el numero de datos
 
