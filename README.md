@@ -17,13 +17,13 @@ Para usar el siguiente script es necesario:
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/1.png)
 
 3.- Ingresar los datos
-x<sub>1</sub> = 0.1    y1
-x<sub>2</sub> = 0.2
-x<sub>3</sub> = 0.3
-x<sub>4</sub> = 0.4
-x<sub>5</sub> = 0.5
-x<sub>6</sub> = 0.6
-x<sub>7</sub> = 0.7
-x<sub>8</sub> = 0.8
-x<sub>9</sub> = 0.9
-x<sub>10</sub> = 1
+- x<sub>1</sub> = 0.1    y1
+- x<sub>2</sub> = 0.2
+- x<sub>3</sub> = 0.3
+- x<sub>4</sub> = 0.4
+- x<sub>5</sub> = 0.5
+- x<sub>6</sub> = 0.6
+- x<sub>7</sub> = 0.7
+- x<sub>8</sub> = 0.8
+- x<sub>9</sub> = 0.9
+- x<sub>10</sub> = 1
