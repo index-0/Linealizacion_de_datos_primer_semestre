@@ -9,7 +9,9 @@ Para usar el siguiente script es necesario:
 
 # Guia de uso
 * Esta guia usa datos obtenidos experimentalmente *
+
 1.- Ejecutar el script
+
 `python minimos_cuadrados.py'
 
 2.- Insertar el numero de datos
