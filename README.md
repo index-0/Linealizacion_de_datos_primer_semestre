@@ -46,4 +46,10 @@ Para usar el siguiente script es necesario:
 6.- Visualizar la grafica (Opcional)
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_2.png)
- 
+
+# 
+
+- [x] Color Output
+- [ ] Lenguaje mas tecnico
+- [ ] Soporte para excel por medio de xlsx
+- [ ] Opcion UNDO
