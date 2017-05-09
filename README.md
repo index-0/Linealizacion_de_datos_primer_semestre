@@ -30,3 +30,5 @@ Para usar el siguiente script es necesario:
 | x<sub>8</sub> = 0.8 m | y<sub>8</sub> = 2.18775 s  |
 | x<sub>9</sub> = 0.9 m | y<sub>9</sub> = 2.32175 s  |
 | x<sub>10</sub> = 1 m  | y<sub>10</sub> = 2.44975 s |
+
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/2.png)
