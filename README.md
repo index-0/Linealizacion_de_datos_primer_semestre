@@ -1,7 +1,7 @@
 # Requerimientos
 Para usar el siguiente script es necesario:
 ##### Version
-- Python 3.6 (Debido a que los diccionarios no toman orden aleatorio)
+- Python 3.6 (debido a que los diccionarios se ordenan por defecto)
 ##### Modulos
 - Matplotlib
 - Numpy
