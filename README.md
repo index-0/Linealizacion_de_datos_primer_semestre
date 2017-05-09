@@ -17,8 +17,8 @@ Para usar el siguiente script es necesario:
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/1.png)
 
 3.- Ingresar los datos
-| Distancia| Tiempo|
-|-----------------------|----------------------------||
+| Distancia             | Tiempo                     |
+|-----------------------|----------------------------|
 | x<sub>1</sub> = 0.1 m | y<sub>1</sub> = 0.7805 s   |
 | x<sub>2</sub> = 0.2 m | y<sub>2</sub> = 1.099 s    |
 | x<sub>3</sub> = 0.3 m | y<sub>3</sub> = 1.3265 s   |
