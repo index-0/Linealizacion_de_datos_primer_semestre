@@ -51,5 +51,5 @@ Para usar el siguiente script es necesario:
 
 - [x] Color Output
 - [ ] Lenguaje mas tecnico
-- [ ] Soporte para excel por medio de xlsx
+- [ ] Soporte para hojas de calculo por medio de xlsx
 - [ ] Opcion UNDO
