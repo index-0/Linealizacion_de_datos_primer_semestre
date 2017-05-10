@@ -7,7 +7,7 @@ import numpy as np
 __author__ = "Alfredo Perez"
 __copyright__ = "Copyright 2017, Alfredo Perez"
 __license__ = "GNU General Public License version 3"
-__version__ = "0.02"
+__version__ = "0.03"
 __maintainer__ = "Alfredo Perez"
 __email__ = "alfredoperez1998@gmail.com"
 __status__ = "Production"
@@ -15,6 +15,7 @@ __status__ = "Production"
 # Variables de los colores
 CGREEN = "\x1b[6;30;42m"
 CRED = "\x1b[0;31;40m"
+CCYAN = "\x1b[0;36;40m"
 CERROR = "\x1b[1;30;41m"
 CEND = "\x1b[0m"
 
@@ -25,20 +26,19 @@ array_y = {}
 x = []
 y = []
 
-n = int(input("Inserte el numero de datos: "))
-
+n = int(input(CCYAN + "Inserte el numero de datos: " + CEND))
 
 print(CRED + "Inserte 'r' para reingresar un valor." + CEND)
 
 for i in range(1, n + 1):
 	dict_print = "Inserte x" + str(format(i)) + ': '
-	array_x['x{0}'.format(i)] = eval(input(dict_print))
+	array_x['x{0}'.format(i)] = eval(input(CCYAN + dict_print + CEND))
 
 print(array_x)
 
 for i in range(1, n + 1):
     dict_print = "Inserte y" + str(format(i)) + ': '
-    array_y['y{0}'.format(i)] = eval(input(dict_print))
+    array_y['y{0}'.format(i)] = eval(input(CCYAN + dict_print + CEND))
 
 print(array_y)
 
@@ -56,13 +56,13 @@ print(CGREEN + str(x) + CEND)
 print('Las "y" insertadas;')
 print(CGREEN + str(y) + CEND)
 
-w_x = input("Que clase de medida es x? ")
-u_x = input("Cual es su unidad? ")
-w_y = input("Que clase de medida es y? ")
-u_y = input("Cual es su unidad? ")
+w_x = input(CCYAN + "Que clase de medida es x? " + CEND)
+u_x = input(CCYAN + "Cual es su unidad? " + CEND)
+w_y = input(CCYAN + "Que clase de medida es y? " + CEND)
+u_y = input(CCYAN + "Cual es su unidad? " + CEND)
 
 # Grafica
-grafica = input('Quiere visualizar la grafica de los datos insertados?(y/n) ')
+grafica = input(CCYAN + 'Quiere visualizar la grafica de los datos insertados?(y/n) ' + CEND)
 if grafica == 'y':
     plt.plot(x, y)
     plt.xlabel(w_x.title() + "(" + u_x + ")")
@@ -108,8 +108,8 @@ suma_ln_xy = sum(ln_xy)
 print('La suma de la multiplicacion de los logaritmos naturales de "x" por los logaritmos naturales de "y":')
 print(CGREEN + str(suma_ln_xy) + CEND)
 
-x_o_y = input("\tQuiere usar x(inserte 'x' sin comillas) o y(inserte 'y' sin comillas)"
-              "; si inserta x en la ecuacion linealizada obtendra 'y' y viceversa. ")
+x_o_y = input(CCYAN + "Para obtener la funcion x(y) inserte 'y'" +
+			  "y para obtener la funcion y(x) inserte 'x'." + CEND)
 
 
 def draw_l_graph(x, y):
@@ -146,13 +146,13 @@ if x_o_y == "x":
     print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
     print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
-    grafica = input('Quiere graficar la ecuacion obtenida? (y/n) ')
+    grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
     if grafica == 'y':
-        val_p = input('Desea insertar valores personalizados?(y/n) ')
+        val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
         if val_p == 'y':
-            rango_xi = eval(input('Inserte el valor inicial de "x" '))
-            rango_xf = eval(input('Inserte el valor final de "x" '))
-            delta_x = eval(input('Inserte la diferencia de distancia para "x" '))
+            rango_xi = eval(input(CCYAN + 'Inserte el valor inicial de "x" ' + CEND))
+            rango_xf = eval(input(CCYAN + 'Inserte el valor final de "x" ' + CEND))
+            delta_x = eval(input(CCYAN + 'Inserte la diferencia de distancia para "x" '+ CEND))
             x = np.arange(rango_xi, rango_xf, delta_x)
             y = []
         elif grafica == 'q':
@@ -168,7 +168,7 @@ if x_o_y == "x":
             quit(CERROR + 'Programa finalizado' + CEND)
 
     while True:
-        x = eval(input('\nInserte algun valor de "x". '))
+        x = eval(input(CCYAN + '\nInserte algun valor de "x". ' + CEND))
         y = a * x ** m
         print("\n" + str(a) + "*(" + str(x) + u_x + ")**" + str(m))
         print(w_y.title() + " = " + str(y))
@@ -200,13 +200,13 @@ elif x_o_y == "y":
     print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
     print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
-    grafica = input('Quiere graficar la ecuacion obtenida? (y/n) ')
+    grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
     if grafica == 'y':
-        val_p = input('Desea insertar valores personalizados?(y/n) ')
+        val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
         if val_p == 'y':
-            rango_yi = eval(input('Inserte el valor inicial de "y" '))
-            rango_yf = eval(input('Inserte el valor final de "y" '))
-            delta_y = eval(input('Inserte la diferencia de distancia entre puntos para el eje "y" '))
+            rango_yi = eval(input(CCYAN + 'Inserte el valor inicial de "y" ' + CEND))
+            rango_yf = eval(input(CCYAN + 'Inserte el valor final de "y" ' + CEND))
+            delta_y = eval(input(CCYAN + 'Inserte la diferencia de distancia entre puntos para el eje "y" ' + CEND))
             y = np.arange(rango_yi, rango_yf, delta_y)
             x = []
         elif val_p == 'q':
@@ -222,7 +222,7 @@ elif x_o_y == "y":
         quit(CERROR + 'Programa finalizado' + CEND)
 
     while True:
-        y = eval(input('\nInserte algun valor de "y". '))
+        y = eval(input(CCYAN + '\nInserte algun valor de "y". ' + CEND))
         x = a * y ** m
         print(str(a) + "*(" + str(y) + u_y + ")**" + str(m))
         print(w_x.title() + " = " + str(x) + u_x)
