@@ -57,6 +57,27 @@ x(1.099s) = 0.16726733794128215(1.099s)<sup>2.0085135783055086</sup> = 0.2021880
 
 x(1.3265s) = 0.16726733794128215(1.3265s)<sup>2.0085135783055086</sup> = 0.2950328208350065m
 
+# Practica
+La practica constaba en un riel inclinado con una longuitud de 1.5 m, con uno de los extremos a una altura de 14.8 cm y el otro extremo a una altura de 19.4 cm.
+h<sub>1</sub> = 14.8 cm
+h<sub>2</sub> = 19.4 cm
+Δh = h<sub>2</sub> - h<sub>1</sub> = 0.046 m
+R = 1.5 m
+
+Tomando los datos como un triangulo rectangulo donde R es la hipotenusa y la diferencia de altura es el cateto opuesto podemos usar la funcion seno para obtener el angulo de inclinacion.
+
+θ = arcsin(Δh/R) = arcsin(0.046m/1.5m) = 1.757346093º
+
+Como la ecuacion obtenida es:
+
+x = at<sup>n</sup>
+
+Donde:
+
+"x" es la distancia
+"a" es la constante
+"n" es el exponente
+
 # 
 
 - [x] Color Output
