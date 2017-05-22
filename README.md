@@ -47,6 +47,13 @@ Para usar el siguiente script es necesario:
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_2.png)
 
+7.- Ingresar datos en la ecuacion obtenida
+x(t) = 0.16726733794128215t<sup>2.0085135783055086</sup>
+
+x(0.7805s) = 0.16726733794128215(0.7805s)<sup>2.0085135783055086</sup> = 0.10168120125025526m
+x(1.099s) = 0.16726733794128215(1.099s)<sup>2.0085135783055086</sup> = 0.20218808880045236m
+x(1.3265s) = 0.16726733794128215(1.3265s)<sup>2.0085135783055086</sup> = 0.2950328208350065m
+
 # 
 
 - [x] Color Output
