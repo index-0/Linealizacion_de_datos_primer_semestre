@@ -19,11 +19,6 @@ CCYAN = "\x1b[0;36;40m"
 CERROR = "\x1b[1;30;41m"
 CEND = "\x1b[0m"
 
-# 
-normal = "0123456789"
-sub = "₀₁₂₃₄₅₆₇₈₉"
-sup = "⁰¹²³⁴⁵⁶⁷⁸⁹"
-
 print(CRED + "Para finalizar el codigo inserte 'q' en cualquier dato de entrada." + CEND)
 
 array_x = {}
@@ -225,7 +220,7 @@ elif x_o_y == "y":
         draw_l_graph(x, y)
     elif grafica == 'q':
         quit(CERROR + 'Programa finalizado' + CEND)
-	
+
     while True:
         y = eval(input(CCYAN + '\nInserte algun valor de "y". ' + CEND))
         x = a * y ** m

@@ -67,14 +67,6 @@ Como la ecuacion obtenida es:
 
 x = at<sup>n</sup>
 
-Donde:
-
-"x" es la distancia
-
-"a" es la constante
-
-"n" es el exponente
-
 Se puede deducir que la ecuacion:
 
 x(t) = 0.16726733794128215t<sup>2.0085135783055086</sup> ≈ 0.5gsen(θ)t<sup>2</sup>
