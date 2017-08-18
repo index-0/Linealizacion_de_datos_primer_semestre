@@ -7,9 +7,8 @@ import numpy as np
 __author__ = "Alfredo Perez"
 __copyright__ = "Copyright 2017, Alfredo Perez"
 __license__ = "GNU General Public License version 3"
-__version__ = "0.03"
-__maintainer__ = "Alfredo Perez"
-__email__ = "alfredoperez1998@gmail.com"
+__version__ = "0.04"
+__email__ = "alfredoperez1998@protonmail.com"
 __status__ = "Production"
 
 # Variables de los colores
@@ -19,7 +18,7 @@ CCYAN = "\x1b[0;36;40m"
 CERROR = "\x1b[1;30;41m"
 CEND = "\x1b[0m"
 
-print(CRED + "Para finalizar el codigo inserte 'q' en cualquier dato de entrada." + CEND)
+print('Para finalizar el proceso presione Ctrl+Z en cualquier momento.')
 
 array_x = {}
 array_y = {}
@@ -30,17 +29,28 @@ n = int(input(CCYAN + "Inserte el numero de datos: " + CEND))
 
 print(CRED + "Inserte 'r' para reingresar un valor." + CEND)
 
-for i in range(1, n + 1):
-	dict_print = "Inserte x" + str(format(i)) + ': '
-	array_x['x{0}'.format(i)] = eval(input(CCYAN + dict_print + CEND))
+i = 0
 
-print(array_x)
+while i <= (n - 1):
+    dict_print = "Inserte x" + str(format(i + 1)) + ': '
+    xinput = input(CCYAN + dict_print + CEND)
+    if xinput == 'r':
+        i = i - 1
+    else:
+        array_x['x{0}'.format(i + 1)] = eval(xinput)
+        i = i + 1
 
-for i in range(1, n + 1):
-    dict_print = "Inserte y" + str(format(i)) + ': '
-    array_y['y{0}'.format(i)] = eval(input(CCYAN + dict_print + CEND))
+print("")
+i = 0
 
-print(array_y)
+while i <= (n - 1):
+    dict_print = "Inserte y" + str(format(i + 1)) + ': '
+    yinput = input(CCYAN + dict_print + CEND)
+    if yinput == 'r':
+        i = i - 1
+    else:
+        array_y['y{0}'.format(i + 1)] = eval(yinput)
+        i = i + 1
 
 for i in array_x.values():
     x.append(i)
@@ -70,8 +80,6 @@ if grafica == 'y':
     plt.plot(x, y, 'co')
     plt.title('Grafica')
     plt.show()
-elif grafica == 'q':
-    quit(CERROR + 'Programa finalizado' + CEND)
 
 # Obtiene el logaritmo natural de las 2 listas
 ln_x = [math.log(i) for i in x]
@@ -105,11 +113,11 @@ print(CGREEN + str(suma_ln_y) + CEND)
 
 # Suma ln(x) * ln(y)
 suma_ln_xy = sum(ln_xy)
-print('La suma de la multiplicacion de los logaritmos naturales de "x" por los logaritmos naturales de "y":')
+print('La suma de la multiplicacion de los logaritmos naturales de "x" por los logaritmos naturales de "y" es:')
 print(CGREEN + str(suma_ln_xy) + CEND)
 
-x_o_y = input(CCYAN + "Para obtener la funcion x(y) inserte 'y'" +
-			  "y para obtener la funcion y(x) inserte 'x'." + CEND)
+x_o_y = input(CCYAN + "Para obtener la funcion x(y) inserte '1' " +
+			  "y para obtener la funcion y(x) inserte '2'." + CEND)
 
 
 def draw_l_graph(x, y):
@@ -119,7 +127,7 @@ def draw_l_graph(x, y):
     plt.title('Grafica')
     plt.show()
 
-if x_o_y == "x":
+if x_o_y == '1':
     ln_x_cuadrado = [n ** 2 for n in ln_x]
     print("El cuadrado de los logaritmos naturales de 'x' es:")
     print(CGREEN + str(ln_x_cuadrado) + CEND)
@@ -155,8 +163,6 @@ if x_o_y == "x":
             delta_x = eval(input(CCYAN + 'Inserte la diferencia de distancia para "x" '+ CEND))
             x = np.arange(rango_xi, rango_xf, delta_x)
             y = []
-        elif grafica == 'q':
-            quit(CERROR + 'Programa finalizado' + CEND)
         else:
             x = np.arange(0, max(x), 0.001)
             y = []
@@ -164,16 +170,14 @@ if x_o_y == "x":
             val_y = a * i ** m
             y.append(val_y)
         draw_l_graph(x, y)
-    elif grafica == 'q':
-            quit(CERROR + 'Programa finalizado' + CEND)
 
     while True:
-        x = eval(input(CCYAN + '\nInserte algun valor de "x". ' + CEND))
+        x = eval(input(CCYAN + '\nInserte algun valor de "x": ' + CEND))
         y = a * x ** m
         print("\n" + str(a) + "*(" + str(x) + u_x + ")**" + str(m))
-        print(w_y.title() + " = " + str(y))
+        print(w_y.title() + " = " + str(y) + u_y)
 
-elif x_o_y == "y":
+elif x_o_y == '2':
     ln_y_cuadrado = [n ** 2 for n in ln_y]
     print("El cuadrado de los logaritmos de 'y' es:")
     print(CGREEN + str(ln_y_cuadrado) + CEND)
@@ -209,8 +213,6 @@ elif x_o_y == "y":
             delta_y = eval(input(CCYAN + 'Inserte la diferencia de distancia entre puntos para el eje "y" ' + CEND))
             y = np.arange(rango_yi, rango_yf, delta_y)
             x = []
-        elif val_p == 'q':
-            quit(CERROR + 'Programa finalizado' + CEND)
         else:
             y = np.arange(0, max(y), 0.001)
             x = []
@@ -218,18 +220,13 @@ elif x_o_y == "y":
             val_x = a * i ** m
             x.append(val_x)
         draw_l_graph(x, y)
-    elif grafica == 'q':
-        quit(CERROR + 'Programa finalizado' + CEND)
 
     while True:
-        y = eval(input(CCYAN + '\nInserte algun valor de "y". ' + CEND))
+        y = eval(input(CCYAN + '\nInserte algun valor de "y": ' + CEND))
         x = a * y ** m
         print(str(a) + "*(" + str(y) + u_y + ")**" + str(m))
         print(w_x.title() + " = " + str(x) + u_x)
 
-elif x_o_y == 'q':
-    quit(CERROR + 'Programa finalizado' + CEND)
-
 else:
-    quit(CERROR + 'Intente de nuevo e inserte un valor valido que sea "x" o "y".' + CEND)
+    quit(CERROR + 'Intente de nuevo e inserte un valor valido que sea "1" o "2" sin comillas.' + CEND)
 
