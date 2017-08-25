@@ -19,11 +19,11 @@ http://matplotlib.org/users/usetex.html
 
 `python minimos_cuadrados.py`
 
-2.- Insertar el numero de datos
+2.- Insertar los tipos de variables y el numero de datos
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/1.png)
 
-3.- Ingresar los datos
+3.- Ingresar los datos y la unidad correspondiente a las variables
 
 | Distancia             | Tiempo                     |
 |-----------------------|----------------------------|
@@ -40,19 +40,23 @@ http://matplotlib.org/users/usetex.html
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/2.png)
 
-4.- Visualizar la grafica (Opcional)
+4.- Visualizar la grafica de los datos (Opcional)
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_1.png)
 
-5.- Decidir la ecuacion que desee (En este caso usaremos 'y' debido a que queremos obtener x(t))
+5.- Decidir la ecuacion que desee
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/3.png)
 
-6.- Visualizar la grafica (Opcional)
+6.- Visualizar la grafica de la ecuacion obtenida (Opcional)
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_2.png)
 
-# Practica
+7.- Se guardara un archivo .csv que contiene la hoja de calculos
+
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/4.png)
+
+# Acerca De La Practica
 
 La practica constaba en un riel inclinado con una longuitud de 1.5 m, con uno de los extremos a una altura de 14.8 cm y el otro extremo a una altura de 19.4 cm.
 
