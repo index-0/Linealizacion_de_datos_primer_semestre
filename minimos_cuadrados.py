@@ -5,13 +5,58 @@ import csv
 import math
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib import rc, rcParams
 
 __author__ = "Alfredo Perez"
 __copyright__ = "Copyright 2017, Alfredo Perez"
 __license__ = "GNU General Public License version 3"
-__version__ = "0.04"
 __email__ = "alfredoperez1998@protonmail.com"
-__status__ = "Production"
+
+# Funciones
+
+
+def draw_graph(x, y, graph, eq):
+    latex = input("Desea usar LaTeX para renderizar el texto? (y/n) ")
+    if latex == 'y':
+        rc('text', usetex=True)
+        rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
+        rcParams['axes.labelsize'] = 15
+        if graph == 1:
+            plt.plot(x, y, 'co')
+            plt.title('Datos Obtenidos')
+        else:
+            plt.plot(x, y)
+            plt.title(eq)
+        plt.xlabel('$' + v_x + "(" + u_x + ")" + '$')
+        plt.ylabel('$' + v_y + "(" + u_y + ")" + '$')
+    else:
+        if graph == 1:
+            plt.plot(x, y, 'co')
+            plt.title('Datos Obtenidos')
+        else:
+            plt.plot(x, y)
+            plt.title(eq)
+        plt.xlabel(v_x + "(" + u_x + ")")
+        plt.ylabel(v_y + "(" + u_y + ")")
+    plt.show()
+
+
+def csv_file(rows):
+    with open('practica.csv', 'w', encoding='utf8') as csvfile:
+        writer = csv.writer(csvfile)
+        for row in rows:
+            writer.writerow(row)
+
+
+def row_maker(v, x, y, ln_x, ln_y, ln_xy, ln_v_cuadrado):
+    x.insert(0, v_x)
+    y.insert(0, v_y)
+    ln_x.insert(0, 'ln(' + v_x + ')')
+    ln_y.insert(0, 'ln(' + v_y + ')')
+    ln_xy.insert(0, 'ln(' + v_x + ')' + ' * ln(' + v_y + ')')
+    ln_v_cuadrado.insert(0, 'ln(' + v + ')²')
+    rows = zip(x, y, ln_x, ln_y, ln_xy, ln_v_cuadrado)
+    return rows
 
 # Variables de los colores
 CGREEN = "\x1b[6;30;42m"
@@ -74,20 +119,13 @@ print(CGREEN + str(x) + CEND)
 print('Las "' + v_y + '" insertadas;')
 print(CGREEN + str(y) + CEND)
 
-w_x = input(CCYAN + "Que clase de medida es " + v_x + "? " + CEND)
-u_x = input(CCYAN + "Cual es su unidad? " + CEND)
-w_y = input(CCYAN + "Que clase de medida es " + v_y + "? " + CEND)
-u_y = input(CCYAN + "Cual es su unidad? " + CEND)
+u_x = input(CCYAN + "Inserte el tipo de unidad de " + v_x + ": " + CEND)
+u_y = input(CCYAN + "Inserte el tipo de unidad de " + v_y + ": " + CEND)
 
 # Grafica
 grafica = input(CCYAN + 'Quiere visualizar la grafica de los datos insertados?(y/n) ' + CEND)
 if grafica == 'y':
-    plt.plot(x, y)
-    plt.xlabel(w_x.title() + "(" + u_x + ")")
-    plt.ylabel(w_y.title() + "(" + u_y + ")")
-    plt.plot(x, y, 'co')
-    plt.title('Grafica')
-    plt.show()
+    draw_graph(x, y, 1, '')
 
 # Obtiene el logaritmo natural de las 2 listas
 ln_x = [math.log(i) for i in x]
@@ -128,30 +166,6 @@ x_o_y = input(CCYAN + "Para obtener la funcion " + v_y + "(" + v_x + ") inserte 
                       "y para obtener la funcion " + v_x + "(" + v_y + ") inserte '2': " + CEND)
 
 
-def csv_file(rows):
-    with open('practica.csv', 'w', encoding='utf8') as csvfile:
-        writer = csv.writer(csvfile)
-        for row in rows:
-            writer.writerow(row)
-
-def row_maker(v, x, y, ln_x, ln_y, ln_xy, ln_v_cuadrado):
-    x.insert(0, v_x)
-    y.insert(0, v_y)
-    ln_x.insert(0, 'ln(' + v_x + ')')
-    ln_y.insert(0, 'ln(' + v_y + ')')
-    ln_xy.insert(0, 'ln(' + v_x + ')' + ' * ln(' + v_y + ')')
-    ln_v_cuadrado.insert(0, 'ln(' + v + ')²')
-    rows = zip(x, y, ln_x, ln_y, ln_xy, ln_v_cuadrado)
-    return rows
-
-
-def draw_l_graph(x, y):
-    plt.plot(x, y)
-    plt.xlabel(w_x.title() + "(" + u_x + ")")
-    plt.ylabel(w_y.title() + "(" + u_y + ")")
-    plt.title('Grafica')
-    plt.show()
-
 if x_o_y == '1':
     v = v_x
     ln_x_cuadrado = ln_v_cuadrado = [n ** 2 for n in ln_x]
@@ -181,6 +195,7 @@ if x_o_y == '1':
     print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
     print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
+    eq = "$\ " + v_y + " = " + str(a) + v_x + " ^"+ str(m)
     grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
     if grafica == 'y':
         val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
@@ -196,7 +211,7 @@ if x_o_y == '1':
         for i in x:
             val_y = a * i ** m
             y.append(val_y)
-        draw_l_graph(x, y)
+        draw_graph(x, y, 0, eq)
 
     while True:
         x = eval(input(CCYAN + '\nInserte algun valor de "' + v_x + '": ' + CEND))
@@ -233,6 +248,7 @@ elif x_o_y == '2':
     print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
     print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
+    eq = "$\ " + v_x + " = " + str(a) + v_y + " ^"+ str(m)
     grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
     if grafica == 'y':
         val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
@@ -248,7 +264,7 @@ elif x_o_y == '2':
         for i in y:
             val_x = a * i ** m
             x.append(val_x)
-        draw_l_graph(x, y)
+        draw_graph(x, y, 0, eq)
 
     while True:
         y = eval(input(CCYAN + '\nInserte algun valor de "' + v_y + '": ' + CEND))

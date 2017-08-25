@@ -7,6 +7,10 @@ Para usar el siguiente script es necesario:
 - Numpy
 - Math
 
+##### Opcional
+Para renderizar texto con latex instale lo que se menciona en el siguiente articulo:
+http://matplotlib.org/users/usetex.html
+
 # Guia de uso
 * Esta guia usa datos obtenidos experimentalmente *
 
