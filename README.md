@@ -70,7 +70,3 @@ x = at<sup>n</sup>
 Se puede deducir que la ecuacion:
 
 x(t) = 0.16726733794128215t<sup>2.0085135783055086</sup> ≈ 0.5gsen(θ)t<sup>2</sup>
-
-# 
-
-- [ ] Soporte para hojas de calculo por medio de xlsx
