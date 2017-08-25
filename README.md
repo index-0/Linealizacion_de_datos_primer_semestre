@@ -19,7 +19,7 @@ http://matplotlib.org/users/usetex.html
 
 `python minimos_cuadrados.py`
 
-2.- Insertar los tipos de variables y el numero de datos
+2.- Insertar las variables a usar y el numero de datos
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/1.png)
 
@@ -52,7 +52,7 @@ http://matplotlib.org/users/usetex.html
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_2.png)
 
-7.- Se guardara un archivo .csv que contiene la hoja de calculos
+7.- Se guardara un archivo .csv el cual contiene la hoja de calculos
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/4.png)
 
