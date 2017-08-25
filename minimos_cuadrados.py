@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import sys
 import csv
 import math
 import matplotlib.pyplot as plt
@@ -22,7 +21,7 @@ def draw_graph(x, y, graph, eq):
         rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
         rcParams['axes.labelsize'] = 15
         if graph == 1:
-            plt.plot(x, y, 'co')
+            plt.plot(x, y, 'co-')
             plt.title('Datos Obtenidos')
         else:
             plt.plot(x, y)
@@ -31,7 +30,7 @@ def draw_graph(x, y, graph, eq):
         plt.ylabel('$' + v_y + "(" + u_y + ")" + '$')
     else:
         if graph == 1:
-            plt.plot(x, y, 'co')
+            plt.plot(x, y, 'co-')
             plt.title('Datos Obtenidos')
         else:
             plt.plot(x, y)
