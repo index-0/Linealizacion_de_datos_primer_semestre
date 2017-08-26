@@ -57,6 +57,11 @@ def row_maker(v, x, y, ln_x, ln_y, ln_xy, ln_v_cuadrado):
     rows = zip(x, y, ln_x, ln_y, ln_xy, ln_v_cuadrado)
     return rows
 
+def sup(m):
+    m_sup = '^'.join(m[i:i+1] for i in range(0, len(m), 1))
+    return m_sup
+
+
 # Variables de los colores
 CGREEN = "\x1b[6;30;42m"
 CRED = "\x1b[0;31;40m"
@@ -194,7 +199,7 @@ if x_o_y == '1':
     print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
     print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
-    eq = "$\ " + v_y + " = " + str(a) + v_x + " ^"+ str(m)
+    eq = "$\ " + v_y + " = " + str(a) + v_x + " ^"+ sup(str(m))
     grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
     if grafica == 'y':
         val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
@@ -247,7 +252,7 @@ elif x_o_y == '2':
     print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
     print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
-    eq = "$\ " + v_x + " = " + str(a) + v_y + " ^"+ str(m)
+    eq = "$\ " + v_x + " = " + str(a) + v_y + " ^"+ sup(str(m))
     grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
     if grafica == 'y':
         val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
