@@ -8,7 +8,7 @@ Para usar el siguiente script es necesario:
 - Math
 
 ##### Opcional
-Para renderizar texto con latex instale lo que se menciona en el siguiente articulo:
+Para la renderizacion de texto con latex es necesario instalar lo que se menciona en el siguiente articulo:
 
 http://matplotlib.org/users/usetex.html
 
