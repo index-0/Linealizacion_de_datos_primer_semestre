@@ -69,7 +69,7 @@ def data(reg_type):
     if grafica == 'y':
         draw_graph(x, y, 1, '', v_x, v_y, u_x, u_y)
 
-    if reg_type == '1':
+    if reg_type == '1' or '2':
         return {'x': x, 'y': y, 'n': n, 'v_x': v_x, 'v_y': v_y, 'u_x': u_x,
                 'u_y': u_y, 'max_x': max_x, 'max_y': max_y}
     else:
@@ -79,7 +79,11 @@ if __name__ == '__main__':
     from funciones import draw_graph
     from colors import *
 
-    reg_type = input('Inserte el modelo de regresion a usar')
+    print('Tipos de regresion disponibles: ')
+    print("Regresion potencial = 1")
+    print("Regresion lineal = 2")
+
+    reg_type = input('Inserte el modelo de regresion a usar: ')
     if reg_type == '1':
         from potencial import potencial
         potencial(data(reg_type))
@@ -87,3 +91,4 @@ if __name__ == '__main__':
     elif reg_type == '2':
         from lineal import lineal
         lineal(data(reg_type))
+

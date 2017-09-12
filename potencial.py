@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-from main import *
 from funciones import draw_graph, csv_file, row_maker, sup
 import math
 import numpy as np
