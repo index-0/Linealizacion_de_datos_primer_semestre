@@ -73,7 +73,7 @@ def lineal(d):
             print(d['v_y'] + " = " + str(a) + "*(" + str(x) + d['u_x'] + " + " + str(b))
             print(d['v_y'] + " = " + str(y) + d['u_y'])
 
-        elif x_o_y == '2':
+    elif x_o_y == '2':
         v = d['v_y']
         print('Las "' + d['v_y'] + '" al cuadrado son:')
         y_cuadrado = [i ** 2 for i in d['y']]
@@ -84,7 +84,7 @@ def lineal(d):
         print(CGREEN + str(suma_y_cuadrado) + CEND)
 
         a = (suma_xy - d['n'] * prom_x * prom_y) / (suma_y_cuadrado - d['n'] * prom_y ** 2)
-        b = prom_y - a * prom_x
+        b = prom_x - a * prom_y
 
         print('La constante (a) es: ' + CGREEN + str(a) + CEND)
         print('La bicectriz (b) es: ' + CGREEN + str(b) + CEND)
