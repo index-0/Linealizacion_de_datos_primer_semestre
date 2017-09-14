@@ -75,7 +75,7 @@ def potencial(d):
         print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
         print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
-        eq = "$\ " + d['v_y'] + " = " + str(a) + d['v_x'] + " ^"+ sup(str(m))
+        eq = "$\ " + d['v_y'] + " = " + str(a) + d['v_x'] + " ^"+ sup(str(m)) + '$'
         grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
         if grafica == 'y':
             val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
@@ -128,7 +128,7 @@ def potencial(d):
         print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
         print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
-        eq = "$\ " + d['v_x'] + " = " + str(a) + d['v_y'] + " ^"+ sup(str(m))
+        eq = "$\ " + d['v_x'] + " = " + str(a) + d['v_y'] + " ^"+ sup(str(m)) + '$'
         grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
         if grafica == 'y':
             val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
