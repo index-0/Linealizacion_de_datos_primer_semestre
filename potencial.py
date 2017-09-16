@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from funciones import draw_graph, csv_file, row_maker, sup
+from funciones import draw_graph, csv_file, row_maker
 import math
 import numpy as np
 from colors import *
@@ -75,7 +75,7 @@ def potencial(d):
         print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
         print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
-        eq = "$\ " + d['v_y'] + " = " + str(a) + d['v_x'] + " ^"+ sup(str(m)) + '$'
+        eq = "$\ " + d['v_y'] + " = " + str(a) + d['v_x'] + "^{"+ str(m) + '}$'
         grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
         if grafica == 'y':
             val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
@@ -86,7 +86,7 @@ def potencial(d):
                 x = np.arange(rango_xi, rango_xf, delta_x)
                 y = []
             else:
-                x = np.arange(0, d['max_x'], 0.001)
+                x = np.arange(d['min_x'], d['max_x'], 0.001)
                 y = []
             for i in x:
                 val_y = a * i ** m
@@ -128,7 +128,7 @@ def potencial(d):
         print('El exponente (n) es: ' + CGREEN + str(m) + CEND)
         print('La constante (a) es: ' + CGREEN + str(a) + CEND)
 
-        eq = "$\ " + d['v_x'] + " = " + str(a) + d['v_y'] + " ^"+ sup(str(m)) + '$'
+        eq = "$\ " + d['v_x'] + " = " + str(a) + d['v_y'] + " ^{"+ str(m) + '}$'
         grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
         if grafica == 'y':
             val_p = input(CCYAN + 'Desea insertar valores personalizados?(y/n) ' + CEND)
@@ -139,7 +139,7 @@ def potencial(d):
                 y = np.arange(rango_yi, rango_yf, delta_y)
                 x = []
             else:
-                y = np.arange(0, d['max_y'], 0.001)
+                y = np.arange(d['min_y'], d['max_y'], 0.001)
                 x = []
             for i in y:
                 val_x = a * i ** m

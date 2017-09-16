@@ -51,7 +51,9 @@ def data(reg_type, n = 0, x = [], y = [], input_f = True):
             y.append(i)
 
     max_x = max(x)
+    min_x = min(y)
     max_y = max(y)
+    min_y = min(y)
 
     # Imprime los datos insertados
     print('\tLos datos insertados fueron los siguientes:')
@@ -71,7 +73,7 @@ def data(reg_type, n = 0, x = [], y = [], input_f = True):
 
     if reg_type == '1' or '2':
         return {'x': x, 'y': y, 'n': n, 'v_x': v_x, 'v_y': v_y, 'u_x': u_x,
-                'u_y': u_y, 'max_x': max_x, 'max_y': max_y}
+                'u_y': u_y, 'max_x': max_x, 'min_x': min_x, 'max_y': max_y, 'min_y': min_y}
     else:
         quit()
 

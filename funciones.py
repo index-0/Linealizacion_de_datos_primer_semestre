@@ -79,9 +79,3 @@ def row_maker(v, x, y, ln_x, ln_y, ln_xy, ln_v_cuadrado, v_x, v_y):
     rows = zip(x, y, ln_x, ln_y, ln_xy, ln_v_cuadrado)
     return rows
 
-def sup(m):
-    # Convierte los numeros de la ecuacion en superindices
-    m_sup = '^'.join(m[i:i+1] for i in range(0, len(m), 1))
-    return m_sup
-
-

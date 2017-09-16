@@ -48,7 +48,12 @@ def lineal(d):
         print('La constante (a) es: ' + CGREEN + str(a) + CEND)
         print('La bicectriz (b) es: ' + CGREEN + str(b) + CEND)
 
-        eq = "$\ " + d['v_y'] + " = " + str(a) + d['v_x'] + " + " + str(b)
+        if b > 0:
+            eq = "$\ " + d['v_x'] + " = " + str(a) + d['v_y'] + " + " + str(b) + "$"
+        elif b < 0:
+            eq = "$\ " + d['v_x'] + " = " + str(a) + d['v_y'] + " " + str(b) + "$"
+        else:
+            eq = "$\ " + d['v_x'] + " = " + str(a) + d['v_y'] + "$"
 
         grafica = input(CCYAN + 'Quiere graficar la ecuacion obtenida? (y/n) ' + CEND)
         if grafica == 'y':
