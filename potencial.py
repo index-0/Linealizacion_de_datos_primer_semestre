@@ -48,7 +48,7 @@ def potencial(d):
 
     if x_o_y == '1':
         v = d['v_x']
-        ln_x_cuadrado = ln_v_cuadrado = [d['n'] ** 2 for d['n'] in ln_x]
+        ln_x_cuadrado = ln_v_cuadrado = [i ** 2 for i in ln_x]
         print('El cuadrado de los logaritmos naturales de "' + d['v_x'] + '" es:')
         print(CGREEN + str(ln_x_cuadrado) + CEND)
 
@@ -101,7 +101,7 @@ def potencial(d):
 
     elif x_o_y == '2':
         v = d['v_y']
-        ln_y_cuadrado = ln_v_cuadrado = [d['n'] ** 2 for d['n'] in ln_y]
+        ln_y_cuadrado = ln_v_cuadrado = [i ** 2 for i in ln_y]
         print('El cuadrado de los logaritmos de "' + d['v_y'] + '" es:')
         print(CGREEN + str(ln_y_cuadrado) + CEND)
 

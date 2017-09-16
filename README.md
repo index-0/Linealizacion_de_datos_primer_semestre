@@ -15,15 +15,27 @@ http://matplotlib.org/users/usetex.html
 # Guia de uso
 * Esta guia usa datos obtenidos experimentalmente *
 
-1.- Ejecutar el script
+1.- Ejecutar el script.
 
-`python minimos_cuadrados.py`
+`python main.py`
 
-2.- Insertar las variables a usar y el numero de datos
+Es recomendable crear un archivo .csv con los datos ya ordenados, como se muestra en la siguiente imagen:
+
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/csv.png)
+
+Para ejecutar el script tomando en cuenta el archivo .csv
+
+`python main.py datos.csv`
+
+2.- Elejir el metodo de regresion a usar.
+
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/Metodo_Regresion.png)
+
+3.- Insertar las variables a usar y el numero de datos.
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/1.png)
 
-3.- Ingresar los datos y la unidad correspondiente a las variables
+4.- Ingresar los datos y la unidad correspondiente a las variables. (En caso de que no se haya cargado el archivo .csv)
 
 | Distancia             | Tiempo                     |
 |-----------------------|----------------------------|
@@ -40,19 +52,23 @@ http://matplotlib.org/users/usetex.html
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/2.png)
 
-4.- Visualizar la grafica de los datos (Opcional)
+5.- Visualizar la grafica de los datos (Opcional)
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_1.png)
 
-5.- Decidir la ecuacion que desee
+6.- Decidir la ecuacion que desee
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/3.png)
 
-6.- Visualizar la grafica de la ecuacion obtenida (Opcional)
+7.- Visualizar la grafica de la ecuacion obtenida (Opcional)
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_2.png)
 
-7.- Se guardara un archivo .csv el cual contiene la hoja de calculos
+8.- Visualizar la grafica de la comparacion de la ecuacion con los datos insertados. (Opcional)
+
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_3.png)
+
+9.- Se guardara un archivo .csv el cual contiene la hoja de calculos
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/4.png)
 
