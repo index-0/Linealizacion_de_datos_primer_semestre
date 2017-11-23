@@ -1,31 +1,29 @@
 #!/usr/bin/env python
 
-__author__ = "Alfredo Perez"
-__copyright__ = "Copyright 2017, Alfredo Perez"
+__author__ = "Alfredo Pérez"
+__copyright__ = "Copyright 2017, Alfredo Pérez"
 __license__ = "GNU General Public License version 3"
 __email__ = "alfredoperez1998@protonmail.com"
 
 def data(reg_type, n = 0, x = [], y = [], input_f = True):
 
-    print(CRED + 'Para finalizar el proceso presione Ctrl+Z en cualquier momento.' + CEND)
-
-    v_x = input("Inserte la primera variable a usar: ")
-    v_y = input("Inserte la segunda variable a usar: ")
+    v_x = input("Input the first variable to use: ")
+    v_y = input("Input the second variable to use: ")
 
     if input_f == False:
         array_x = {}
         array_y = {}
         x = []
         y = []
-        n = int(input(CCYAN + "Inserte el numero de datos: " + CEND))
+        n = int(input(C3 + "Input the data number: " + CE))
 
-        print(CRED + "Inserte 'r' para reingresar un valor." + CEND)
+        print(C2 + "Input 'r' to re-enter a value." + CE)
 
         i = 0
 
         while i <= (n - 1):
-            dict_print = "Inserte " + v_x +  str(format(i + 1)) + ': '
-            xinput = input(CCYAN + dict_print + CEND)
+            dict_print = "Input " + v_x +  str(format(i + 1)) + ': '
+            xinput = input(C3 + dict_print + CE)
             if xinput == 'r':
                 i = i - 1
             else:
@@ -36,8 +34,8 @@ def data(reg_type, n = 0, x = [], y = [], input_f = True):
         i = 0
 
         while i <= (n - 1):
-            dict_print = "Inserte " + v_y + str(format(i + 1)) + ': '
-            yinput = input(CCYAN + dict_print + CEND)
+            dict_print = "Input " + v_y + str(format(i + 1)) + ': '
+            yinput = input(C3 + dict_print + CE)
             if yinput == 'r':
                 i = i - 1
             else:
@@ -55,20 +53,19 @@ def data(reg_type, n = 0, x = [], y = [], input_f = True):
     max_y = max(y)
     min_y = min(y)
 
-    # Imprime los datos insertados
-    print('\tLos datos insertados fueron los siguientes:')
-    print("Numeros de datos = " + CGREEN + str(n) + CEND)
-    print('Las "' + v_x +'" insertadas;')
-    print(CGREEN + str(x) + CEND)
-    print('Las "' + v_y + '" insertadas;')
-    print(CGREEN + str(y) + CEND)
+    print('\tThe entered data were the following:')
+    print("Number of data = " + C1 + str(n) + CE)
+    print('The entered "' + v_x + '" are;')
+    print(C1 + str(x) + CE)
+    print('The entered "' + v_y + '" are;')
+    print(C1 + str(y) + CE)
 
-    u_x = input(CCYAN + "Inserte el tipo de unidad de " + v_x + ": " + CEND)
-    u_y = input(CCYAN + "Inserte el tipo de unidad de " + v_y + ": " + CEND)
+    u_x = input(C3 + "Input the unit type of " + v_x + ": " + CE)
+    u_y = input(C3 + "Input the unit type of " + v_y + ": " + CE)
 
-    # Grafica
-    grafica = input(CCYAN + 'Quiere visualizar la grafica de los datos insertados?(y/n) ' + CEND)
-    if grafica == 'y':
+    # Graph
+    graph = input(C3 + 'Do you want to visualize the graph of the entered data? (y/n) ' + CE)
+    if graph == 'y':
         draw_graph(x, y, 1, '', v_x, v_y, u_x, u_y)
 
     if reg_type == '1' or '2':
@@ -79,13 +76,13 @@ def data(reg_type, n = 0, x = [], y = [], input_f = True):
 
 if __name__ == '__main__':
     import sys
-    from funciones import draw_graph
+    from functions import draw_graph
     from colors import *
 
-    print('Tipos de regresion disponibles: ')
-    print("Regresion potencial =  1")
-    print("Regresion lineal    =  2")
-    reg_type = input('Inserte el modelo de regresion a usar: ')
+    print('Regression Models: ')
+    print("\tPower regression  =  1")
+    print("\tLinear regression =  2")
+    reg_type = input('Input the regression model to use: ')
 
     try:
         input_file = sys.argv[1]
@@ -108,20 +105,20 @@ if __name__ == '__main__':
             n = len(x)
 
             if reg_type == '1':
-                from potencial import potencial
-                potencial(data(reg_type, n, x, y, input_f = True))
+                from models import power
+                power(data(reg_type, n, x, y, input_f = True))
 
             elif reg_type == '2':
-                from lineal import lineal
-                lineal(data(reg_type, n, x, y, input_f = True))
+                from models import linear
+                linear(data(reg_type, n, x, y, input_f = True))
 
     except IndexError:
         if reg_type == '1':
-            from potencial import potencial
-            potencial(data(reg_type, input_f = False))
+            from models import power
+            power(data(reg_type, input_f = False))
 
         elif reg_type == '2':
-            from lineal import lineal
-            lineal(data(reg_type, input_f = False))
+            from models import linear
+            linear(data(reg_type, input_f = False))
 
 

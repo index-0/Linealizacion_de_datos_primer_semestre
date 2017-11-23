@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-CGREEN = "\33[32m"
-CRED = "\33[31m"
-CCYAN = "\33[34m"
-CERROR = "\x1b[1;30;41m"
-CEND = "\x1b[0m"
+# These are just the terminal color values
+C1 = "\33[32m"      # Green
+C2 = "\33[31m"      # Red
+C3 = "\33[34m"      # Cyan
+CE = "\x1b[0m"      # END
