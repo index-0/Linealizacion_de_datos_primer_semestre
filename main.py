@@ -6,6 +6,7 @@ __license__ = "GNU General Public License version 3"
 __email__ = "alfredoperez1998@protonmail.com"
 
 def data(reg_type, n = 0, x = [], y = [], input_f = True):
+    from pickle import dump
 
     v_x = input("Input the first variable to use: ")
     v_y = input("Input the second variable to use: ")
@@ -48,8 +49,11 @@ def data(reg_type, n = 0, x = [], y = [], input_f = True):
         for i in array_y.values():
             y.append(i)
 
+    dump(x, open('x.dump', 'wb'))
+    dump(y, open('y.dump', 'wb'))
+
     max_x = max(x)
-    min_x = min(y)
+    min_x = min(x)
     max_y = max(y)
     min_y = min(y)
 
@@ -120,5 +124,4 @@ if __name__ == '__main__':
         elif reg_type == '2':
             from models import linear
             linear(data(reg_type, input_f = False))
-
 
