@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 
-from functions import draw_graph, csv_file, row_maker
-import math
-import numpy as np
+from functions import draw_graph, csv_file, row_maker, D
+from math import log, exp
+from numpy import arange
 from colors import *
 
-def power(d):
 
-    ln_x = [math.log(i) for i in d['x']]
-    ln_y = [math.log(i) for i in d['y']]
+def power(d):
+    # Power Regression
+    ln_x = [log(i) for i in d['x']]
+    ln_y = [log(i) for i in d['y']]
 
     print('\tThe natural logarithms of the data are:')
 
@@ -58,7 +59,7 @@ def power(d):
         print('The vertical intercept is:')
         print('b = ' + C1 + str(b) + CE)
 
-        a = math.exp(b)
+        a = exp(b)
         print('The exponent (n) is: ' + C1 + str(m) + CE)
         print('The constant (a) is: ' + C1 + str(a) + CE)
 
@@ -67,13 +68,13 @@ def power(d):
         if grafica == 'y':
             val_p = input(C3 + 'Do you want to input custom values? (y/n) ' + CE)
             if val_p == 'y':
-                rango_xi = eval(input(C3 + 'Input the initial value of "' + d['v_x'] + '": ' + CE))
-                rango_xf = eval(input(C3 + 'Input the final value of "' + d['v_x'] + '": ' + CE))
+                xi = eval(input(C3 + 'Input the initial value of "' + d['v_x'] + '": ' + CE))
+                xf = eval(input(C3 + 'Input the final value of "' + d['v_x'] + '": ' + CE))
                 delta_x = eval(input(C3 + 'Input the difference of "' + d['v_x'] + '": '+ CE))
-                x = np.arange(rango_xi, rango_xf, delta_x)
+                x = arange(xi, xf, delta_x)
                 y = []
             else:
-                x = np.arange(d['min_x'], d['max_x'], 0.001)
+                x = arange(d['min_x'], d['max_x'], 0.001)
                 y = []
             for i in x:
                 val_y = a * i ** m
@@ -108,7 +109,7 @@ def power(d):
         print('The vertical intercept is:')
         print('b = ' + C1 + str(b) + CE)
 
-        a = math.exp(b)
+        a = exp(b)
         print('The exponent (n) is: ' + C1 + str(m) + CE)
         print('The constant (a) is: ' + C1 + str(a) + CE)
 
@@ -117,13 +118,13 @@ def power(d):
         if grafica == 'y':
             val_p = input(C3 + 'Do you want to input custom values? (y/n) ' + CE)
             if val_p == 'y':
-                rango_yi = eval(input(C3 + 'Input the initial value of "' + d['v_y'] + '": ' + CE))
-                rango_yf = eval(input(C3 + 'Input the final value of "' + d['v_y'] + '": ' + CE))
+                yi = eval(input(C3 + 'Input the initial value of "' + d['v_y'] + '": ' + CE))
+                yf = eval(input(C3 + 'Input the final value of "' + d['v_y'] + '": ' + CE))
                 delta_y = eval(input(C3 + 'Input the difference of "' + d['v_y'] + '": ' + CE))
-                y = np.arange(rango_yi, rango_yf, delta_y)
+                y = arange(yi, yf, delta_y)
                 x = []
             else:
-                y = np.arange(d['min_y'], d['max_y'], 0.001)
+                y = arange(d['min_y'], d['max_y'], 0.001)
                 x = []
             for i in y:
                 val_x = a * i ** m
@@ -141,6 +142,7 @@ def power(d):
 
 
 def linear(d):
+    # Linear Regression
     sum_x = sum(d['x'])
     print('The sum of "' + d['v_x'] + '" is:')
     print(C1 + str(sum_x) + CE)
@@ -193,13 +195,14 @@ def linear(d):
         if grafica == 'y':
             val_p = input(C3 + 'Do you want to input custom values?(y/n) ' + CE)
             if val_p == 'y':
-                rango_xi = eval(input(C3 + 'Input the initial value of "' + d['v_x'] + '": ' + CE))
-                rango_xf = eval(input(C3 + 'Input the final value of "' + d['v_x'] + '": ' + CE))
+                xi = eval(input(C3 + 'Input the initial value of "' + d['v_x'] + '": ' + CE))
+                xf = eval(input(C3 + 'Input the final value of "' + d['v_x'] + '": ' + CE))
                 delta_x = eval(input(C3 + 'Input the difference of "' + d['v_x'] + '": '+ CE))
-                x = np.arange(rango_xi, rango_xf, delta_x)
+                x = arange(xi, xf, delta_x)
                 y = []
             else:
-                x = np.arange(0, d['max_x'], 0.001)
+                x = D(d['max_x'], d['min_x'])
+                print(x)
                 y = []
             for i in x:
                 val_y = a * i + b
@@ -239,13 +242,13 @@ def linear(d):
         if grafica == 'y':
             val_p = input(C3 + 'Do you want to input custom values? (y/n) ' + CE)
             if val_p == 'y':
-                rango_xi = eval(input(C3 + 'Input the initial value of "' + d['v_y'] + '": ' + CE))
-                rango_xf = eval(input(C3 + 'Input the final value of "' + d['v_y'] + '": ' + CE))
+                xi = eval(input(C3 + 'Input the initial value of "' + d['v_y'] + '": ' + CE))
+                xf = eval(input(C3 + 'Input the final value of "' + d['v_y'] + '": ' + CE))
                 delta_x = eval(input(C3 + 'Input the difference of  "' + d['v_y'] + '": '+ CE))
-                y = np.arange(rango_yi, rango_yf, delta_y)
+                y = arange(yi, yf, delta_y)
                 x = []
             else:
-                y = np.arange(0, d['max_y'], 0.001)
+                y = D(d['max_y'], d['min_y'])
                 x = []
             for i in y:
                 val_x = a * i + b
