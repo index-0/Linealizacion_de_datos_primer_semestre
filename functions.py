@@ -4,7 +4,8 @@ from matplotlib import rc, rcParams
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import csv
-import pickle
+from numpy import arange
+from pickle import load
 
 def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
     latex = input("Do you want to use LaTeX for text rendering? (y/n) ")
@@ -37,15 +38,11 @@ def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
             plt.savefig('equation.png', dpi = 250, format = 'png', transparent = True, bbox_inches = 'tight')
     plt.show()
 
-    if  graph == 1:
-        pickle.dump(x, open('d_x.dump', 'wb'))
-        pickle.dump(y, open('d_y.dump', 'wb'))
-
-    elif graph != 1:
+    if graph != 1:
         comp = input('Do you want to compare the equation with the entered data? (y/n)')
         if comp == 'y':
             plt.plot(x, y, color = '#287086', ls = '-')
-            plt.plot(pickle.load(open('d_x.dump', 'rb')), pickle.load(open('d_y.dump', 'rb')), color = '#361156', ls='None', marker = '.')
+            plt.plot(load(open('x.dump', 'rb')), load(open('y.dump', 'rb')), color = '#361156', ls='None', marker = '.')
 
             patch_1 = mpatches.Patch(color='#361156', label= r'\textrm{\textnormal{Data}}')
             patch_2 = mpatches.Patch(color='#287086', label= eq)
@@ -58,9 +55,32 @@ def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
             plt.savefig('comparison.png', dpi = 250, format = 'png', transparent = True, bbox_inches = 'tight')
             plt.show()
 
+def D(max_v, min_v):
+    v = []
+    AB = max_v - min_v
+    if AB < 1:
+        v = arange(min_v, max_v, 0.0001)
+    elif AB < 10:
+        v = arange(min_v, max_v, 0.001)
+    elif AB < 100:
+        v = arange(min_v, max_v, 0.01)
+    elif AB < 1000:
+        v = arange(min_v, max_v, 0.1)
+    elif AB < 10000:
+        v = arange(min_v, max_v, 1)
+    elif AB < 100000:
+        v = arange(min_v, max_v, 10)
+    elif AB < 1000000:
+        v = arange(min_v, max_v, 100)
+    elif AB < 10000000:
+        v = arange(min_v, max_v, 1000)
+    else:
+        v = arange(min_v, max_v, 10000)
+    return v
+
 
 def csv_file(rows):
-    with open('data.csv', 'w', encoding='utf8') as csvfile:
+    with open('data.csv', 'w', encomin_vng='utf8') as csvfile:
         writer = csv.writer(csvfile)
         for row in rows:
             writer.writerow(row)
