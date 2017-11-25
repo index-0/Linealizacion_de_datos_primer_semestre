@@ -13,7 +13,7 @@ font_family = 'sans-serif'
 # Sans-serif fonts = ['Helvetica', 'Avant Garde', 'Computer Modern Sans serif']
 # Cursive fonts = ['Zapf Chancery']
 # Monospace fonts = ['Courier', 'Computer Modern Typewriter']
-font = 'Helvica'
+font = 'Helvetica'
 
 # Data graph #
 data_graph_line_type = '-'                          # [| '-' | '--' | '-.' | ':' | 'None' | ' ' | ''] (str)
@@ -29,6 +29,7 @@ data_graph_transparency = 1.0                       # 0.0 transparent through 1.
 # Equation graph #
 equation_graph_line_type = '-'                      # [| '-' | '--' | '-.' | ':' | 'None' | ' ' | ''] (str)
 equation_graph_line_color = '#287086'               # Hex color (str)
+equation_graph_line_width = 1.0                     # (float)
 equation_graph_transparency = 1.0                   # 0.0 transparent through 1.0 opaque (float)
 
 # Comparison graph #
@@ -48,15 +49,15 @@ comparison_graph_equation_line_width = 1.0          # (float)
 comparison_graph_equation_transparency = 1.0        # 0.0 transparent through 1.0 opaque (float)
 
 # Save parameters #
-save_format = 'png'                                 # One of the file extensions supported png, pdf, ps, eps or svg.
-save_dpi = 250                                      # The resolution in dots per inch.
-save_transparent = True                             # (bolean)
-save_bbox_inches = 'tight'                          # Bbox in inches. Only the given portion of the figure is saved. If ‘tight’, try to figure out the tight bbox of the figure.
-save_pad_inches = 0.1                               # Amount of padding around the figure when bbox_inches is ‘tight’.
+save_format = 'png'                                 # One of the file extensions supported png, pdf, ps, eps or svg. (str)
+save_dpi = 250                                      # The resolution in dots per inch. (int)
+save_transparent = True                             # (boolean)
+save_bbox_inches = 'tight'                          # Bbox in inches. Only the given portion of the figure is saved. If ‘tight’, try to figure out the tight bbox of the figure. (float) or (str) for 'tight'.
+save_pad_inches = 0.1                               # Amount of padding around the figure when bbox_inches is ‘tight’. (float)
 save_orientation = 'portrait'                       # [ ‘landscape’ | ‘portrait’ ] (str)
-save_frameon = True                                 # If True, the figure patch will be colored, if False, the figure background will be transparent.
+save_frameon = True                                 # If True, the figure patch will be colored, if False, the figure background will be transparent. (boolean)
 
-antialiased = True                                  # Render lines in antialised (no jaggies) (bolean)
+antialiased = True                                  # Render lines in antialised (no jaggies) (boolean)
 
 ###################
 # Terminal colors #

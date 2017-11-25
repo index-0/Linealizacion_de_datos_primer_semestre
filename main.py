@@ -8,8 +8,8 @@ __email__ = "alfredoperez1998@protonmail.com"
 def data(reg_type, n = 0, x = [], y = [], input_f = True):
     from pickle import dump
 
-    v_x = input("Input the first variable to use: ")
-    v_y = input("Input the second variable to use: ")
+    v_x = input(C3 + "Input the first variable to use: " + CE)
+    v_y = input(C3 + "Input the second variable to use: " + CE)
 
     if input_f == False:
         array_x = {}
@@ -81,12 +81,12 @@ def data(reg_type, n = 0, x = [], y = [], input_f = True):
 if __name__ == '__main__':
     import sys
     from functions import draw_graph
-    from colors import *
+    from configuration import C1, C2, C3, CE
 
     print('Regression Models: ')
     print("\tPower regression  =  1")
     print("\tLinear regression =  2")
-    reg_type = input('Input the regression model to use: ')
+    reg_type = input(C3 + 'Input the regression model to use: ' + CE)
 
     try:
         input_file = sys.argv[1]
