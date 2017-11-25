@@ -80,6 +80,7 @@ def data(reg_type, n = 0, x = [], y = [], input_f = True):
 
 if __name__ == '__main__':
     import sys
+    from os import remove
     from functions import draw_graph
     from configuration import C1, C2, C3, CE
 
@@ -124,4 +125,8 @@ if __name__ == '__main__':
         elif reg_type == '2':
             from models import linear
             linear(data(reg_type, input_f = False))
+
+    # Removes the pickled variables
+    remove('x.dump')
+    remove('y.dump')
 
