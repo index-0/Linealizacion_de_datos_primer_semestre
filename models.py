@@ -3,7 +3,7 @@
 from functions import draw_graph, csv_file, row_maker, D
 from math import log, exp
 from numpy import arange
-from colors import *
+from configuration import C1, C2, C3, CE
 
 
 def power(d):
@@ -74,16 +74,19 @@ def power(d):
                 x = arange(xi, xf, delta_x)
                 y = []
             else:
-                x = arange(d['min_x'], d['max_x'], 0.001)
+                x = D(d['max_x'], d['min_x'])
                 y = []
             for i in x:
                 val_y = a * i ** m
                 y.append(val_y)
             draw_graph(x, y, 0, eq, d['v_x'], d['v_y'], d['u_x'], d['u_y'])
 
+        print(C2 + "Input 'q' to exit the loop." + CE)
         while True:
-            x = eval(input(C3 + '\nInput some value of "' + d['v_x'] + '": ' + CE))
-            y = a * x ** m
+            x = input(C3 + '\nInput some value of "' + d['v_x'] + '": ' + CE)
+            if x == 'q':
+                break
+            y = a * eval(x) ** m
             print(d['v_y'] + " = " + str(a) + "*(" + str(x) + d['u_x'] + ")**" + str(m))
             print(d['v_y'] + " = " + str(y) + d['u_y'])
 
@@ -124,16 +127,19 @@ def power(d):
                 y = arange(yi, yf, delta_y)
                 x = []
             else:
-                y = arange(d['min_y'], d['max_y'], 0.001)
+                y = D(d['max_y'], d['min_y'])
                 x = []
             for i in y:
                 val_x = a * i ** m
                 x.append(val_x)
             draw_graph(x, y, 0, eq, d['v_x'], d['v_y'], d['u_x'], d['u_y'])
 
+        print(C2 + "Input 'q' to exit the loop." + CE)
         while True:
-            y = eval(input(C3 + '\nInput some value of "' + d['v_y'] + '": ' + CE))
-            x = a * y ** m
+            y = input(C3 + '\nInput some value of "' + d['v_y'] + '": ' + CE)
+            if y == 'q':
+                break
+            x = a * eval(y) ** m
             print(d['v_x'] + " = " + str(a) + "*(" + str(y) + d['u_y'] + ")**" + str(m))
             print(d['v_x'] + " = " + str(x) + d['u_x'])
 
@@ -209,9 +215,12 @@ def linear(d):
                 y.append(val_y)
             draw_graph(x, y, 0, eq, d['v_x'], d['v_y'], d['u_x'], d['u_y'])
 
+        print(C2 + "Input 'q' to exit the loop." + CE)
         while True:
-            x = eval(input(C3 + '\nInput some value of "' + d['v_x'] + '": ' + CE))
-            y = a * x + b
+            x = input(C3 + '\nInput some value of "' + d['v_x'] + '": ' + CE)
+            if x == 'q':
+                break
+            y = a * eval(x) + b
             print(d['v_y'] + " = " + str(a) + "*(" + str(x) + d['u_x'] + ") + " + str(b))
             print(d['v_y'] + " = " + str(y) + d['u_y'])
 
@@ -255,9 +264,12 @@ def linear(d):
                 x.append(val_x)
             draw_graph(x, y, 0, eq, d['v_x'], d['v_y'], d['u_x'], d['u_y'])
 
+        print(C2 + "Input 'q' to exit the loop." + CE)
         while True:
-            y = eval(input(C3 + '\nInput some value of "' + d['v_y'] + '": ' + CE))
-            x = a * y + b
+            y = input(C3 + '\nInput some value of "' + d['v_y'] + '": ' + CE)
+            if y == 'q':
+                break
+            x = a * eval(y) + b
             print(d['v_x'] + " = " + str(a) + "(" + str(y) + d['u_y'] + ") + " + str(b))
             print(d['v_x'] + " = " + str(x) + d['u_x'])
 
