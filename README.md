@@ -66,6 +66,8 @@ If you want to use 'x' in the y axis then input 'x' in the second prompt.
 
 3.1.- In case that a .csv file wasn't given, you will need to input the data manually
 
+<img src="https://raw.github.com/index-0/Regresion/master/Images/1.png" alt="Input of data" width="550" height="298">
+
 4.- Input the unit of the variables
 
 If the unit of the first variable (x axis) are seconds then input 's' or 'seconds' or: '\textnormal{seconds}' in case LaTeX is enabled and the same goes for the y axis.
@@ -86,5 +88,7 @@ If you want to compute the equation y(x) then input '1' or if you want to comput
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_3.png)
 
-9.- A .csv file will be saved in the script dir
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/saved_csv_file.png)
+9.- A .csv file will be saved in the script directory
+
+<img src="https://raw.github.com/index-0/Regresion/master/Images/saved_csv_file.png" alt="Saved csv file" width="784" height="618">
+
