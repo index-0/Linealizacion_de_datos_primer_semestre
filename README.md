@@ -1,43 +1,21 @@
-# Requerimientos
-Para usar el siguiente script es necesario:
+# Requeriments
 ##### Version
-- Python 3.6 (debido a que los diccionarios se ordenan por defecto)
-##### Modulos
+- Python version >= 3.6
+##### Modules
 - Matplotlib
 - Numpy
 - Math
 
-##### Opcional
-Para la renderizacion de texto con latex es necesario instalar lo que se menciona en el siguiente articulo:
+##### Optional
+Follow the instructions that are in the next link to add text rendering support with LaTeX:
 
 http://matplotlib.org/users/usetex.html
 
-# Guia de uso
-* Esta guia usa datos obtenidos experimentalmente *
+# Guide
+## Example 1
+* This guide uses experimental data *
 
-1.- Ejecutar el script.
-
-`python main.py`
-
-Es recomendable crear un archivo .csv con los datos ya ordenados, como se muestra en la siguiente imagen:
-
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/csv.png)
-
-Para ejecutar el script tomando en cuenta el archivo .csv
-
-`python main.py datos.csv`
-
-2.- Elejir el metodo de regresion a usar.
-
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/Metodo_Regresion.png)
-
-3.- Insertar las variables a usar y el numero de datos.
-
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/1.png)
-
-4.- Ingresar los datos y la unidad correspondiente a las variables. (En caso de que no se haya cargado el archivo .csv)
-
-| Distancia             | Tiempo                     |
+| Distance              | Time                       |
 |-----------------------|----------------------------|
 | x<sub>1</sub> = 0.1 m | t<sub>1</sub> = 0.7805 s   |
 | x<sub>2</sub> = 0.2 m | t<sub>2</sub> = 1.099 s    |
@@ -50,48 +28,63 @@ Para ejecutar el script tomando en cuenta el archivo .csv
 | x<sub>9</sub> = 0.9 m | t<sub>9</sub> = 2.32175 s  |
 | x<sub>10</sub> = 1 m  | t<sub>10</sub> = 2.44975 s |
 
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/2.png)
+1.- Execute the script using one of the following commands:
 
-5.- Visualizar la grafica de los datos (Opcional)
+`python main.py`
+
+or:
+
+`ipython main.py`
+
+or:
+
+Give execute permission to the main.py file
+
+`chmod +x main.py`
+
+and execute it with:
+
+`./main.py`
+
+It's recommended to add the data in a .csv file, where a row is the data of a variable, like you can see in the following image:
+
+<img src="https://raw.github.com/index-0/Regresion/master/Images/csv.png" alt=".csv file example" width="550" height="94">
+
+To execute the script with the .csv file:
+
+`python main.py datafile.csv`
+
+2.- Choice the regression method
+
+Input '1' for power regression or input '2' for linear regression.
+
+3.- Input the names of the variables
+
+If you want to use 't' in the x axis then input 't' in the first prompt.
+
+If you want to use 'x' in the y axis then input 'x' in the second prompt.
+
+3.1.- In case that a .csv file wasn't given, you will need to input the data manually
+
+4.- Input the unit of the variables
+
+If the unit of the first variable (x axis) are seconds then input 's' or 'seconds' or: '\textnormal{seconds}' in case LaTeX is enabled and the same goes for the y axis.
+
+5.- Graph of the given data (Optional)
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_1.png)
 
-6.- Decidir la ecuacion que desee
+6.- Choice the equation y(x) or x(y)
 
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/3.png)
+If you want to compute the equation y(x) then input '1' or if you want to compute the equation x(y) then input '2'.
 
-7.- Visualizar la grafica de la ecuacion obtenida (Opcional)
+7.- Graph of the equation (Optional)
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_2.png)
 
-8.- Visualizar la grafica de la comparacion de la ecuacion con los datos insertados. (Opcional)
+8.- Graph of the comparison (Optional)
 
 ![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_3.png)
 
-9.- Se guardara un archivo .csv el cual contiene la hoja de calculos
-
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/4.png)
-
-# Acerca De La Practica
-
-La practica constaba en un riel inclinado con una longuitud de 1.5 m, con uno de los extremos a una altura de 14.8 cm y el otro extremo a una altura de 19.4 cm.
-
-h<sub>1</sub> = 14.8 cm
-
-h<sub>2</sub> = 19.4 cm
-
-Δh = h<sub>2</sub> - h<sub>1</sub> = 0.046 m
-
-R = 1.5 m
-
-Tomando los datos como un triangulo rectangulo donde R es la hipotenusa y la diferencia de altura es el cateto opuesto podemos usar la funcion seno para obtener el angulo de inclinacion.
-
-θ = arcsin(Δh/R) = arcsin(0.046m/1.5m) = 1.757346093º
-
-Como la ecuacion obtenida es:
-
-x = at<sup>n</sup>
-
-Se puede deducir que la ecuacion:
-
-x(t) = 0.16726733794128215t<sup>2.0085135783055086</sup> ≈ 0.5gsen(θ)t<sup>2</sup>
+9.- A .csv file will be saved in the script dir
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/saved_csv_file.png)
