@@ -2,7 +2,7 @@
 
 __author__ = "Alfredo Pérez"
 __copyright__ = "Copyright 2017, Alfredo Pérez"
-__license__ = "GNU General Public License version 3"
+__license__ = "MIT"
 __email__ = "alfredoperez1998@protonmail.com"
 
 def data(reg_type, n = 0, x = [], y = [], input_f = True):
