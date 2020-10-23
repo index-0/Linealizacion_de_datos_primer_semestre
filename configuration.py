@@ -8,14 +8,15 @@
 latex = True
 unicode = True
 # Font families = ['serif', 'sans-serif', 'cursive', 'monospace']
-font_family = 'sans-serif'
+font_family = 'serif'
 # Serif fonts = ['Times', 'Palatino', 'New Century Schoolbook', 'Bookman', 'Computer Modern Roman']
 # Sans-serif fonts = ['Helvetica', 'Avant Garde', 'Computer Modern Sans serif']
 # Cursive fonts = ['Zapf Chancery']
 # Monospace fonts = ['Courier', 'Computer Modern Typewriter']
-font = 'Helvetica'
+font = 'Computer Modern Roman'
 
 # Data graph #
+data_graph_title = 'Data'                           # Title of the label for the data graph.
 data_graph_line_type = '-'                          # [| '-' | '--' | '-.' | ':' | 'None' | ' ' | ''] (str)
 data_graph_line_color = '#361156'                   # Hex color (str)
 data_graph_line_width = 1.0                         # (float)
@@ -55,7 +56,6 @@ save_transparent = True                             # (boolean)
 save_bbox_inches = 'tight'                          # Bbox in inches. Only the given portion of the figure is saved. If ‘tight’, try to figure out the tight bbox of the figure. (float) or (str) for 'tight'.
 save_pad_inches = 0.1                               # Amount of padding around the figure when bbox_inches is ‘tight’. (float)
 save_orientation = 'portrait'                       # [ ‘landscape’ | ‘portrait’ ] (str)
-save_frameon = True                                 # If True, the figure patch will be colored, if False, the figure background will be transparent. (boolean)
 
 antialiased = True                                  # Render lines in antialised (no jaggies) (boolean)
 

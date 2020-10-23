@@ -83,6 +83,7 @@ if __name__ == '__main__':
     from os import remove
     from functions import draw_graph
     from configuration import C1, C2, C3, CE
+    from models import power, linear
 
     print('Regression Models: ')
     print("\tPower regression  =  1")
@@ -110,20 +111,16 @@ if __name__ == '__main__':
             n = len(x)
 
             if reg_type == '1':
-                from models import power
                 power(data(reg_type, n, x, y, input_f = True))
 
             elif reg_type == '2':
-                from models import linear
                 linear(data(reg_type, n, x, y, input_f = True))
 
     except IndexError:
         if reg_type == '1':
-            from models import power
             power(data(reg_type, input_f = False))
 
         elif reg_type == '2':
-            from models import linear
             linear(data(reg_type, input_f = False))
 
     # Removes the pickled variables

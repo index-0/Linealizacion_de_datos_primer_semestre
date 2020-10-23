@@ -13,7 +13,6 @@ def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
         try:
             rc('font',**{'family':font_family,font_family:[font]})
             rc('text', usetex=True)
-            rcParams['text.latex.unicode'] = unicode
             rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
             rcParams['axes.labelsize'] = 15
         except IndexError:
@@ -26,7 +25,7 @@ def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
                  alpha = data_graph_transparency, aa = antialiased)
         plt.xlabel('$' + v_x + "(" + u_x + ")" + '$')
         plt.ylabel('$' + v_y + "(" + u_y + ")" + '$')
-        plt.savefig('data.' + save_format, dpi = save_dpi, frameon = save_frameon, format = save_format, transparent = save_transparent, bbox_inches = save_bbox_inches, orientation = save_orientation)
+        plt.savefig('data.' + save_format, dpi = save_dpi, format = save_format, transparent = save_transparent, bbox_inches = save_bbox_inches, orientation = save_orientation)
     else:
         plt.plot(x, y,
                  ls = equation_graph_line_type, color = equation_graph_line_color, lw = equation_graph_line_width,
@@ -34,7 +33,7 @@ def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
         plt.title(eq)
         plt.xlabel('$' + v_x + "(" + u_x + ")" + '$')
         plt.ylabel('$' + v_y + "(" + u_y + ")" + '$')
-        plt.savefig('equation.' + save_format, dpi = save_dpi, frameon = save_frameon, format = save_format, transparent = save_transparent, bbox_inches = save_bbox_inches, orientation = save_orientation)
+        plt.savefig('equation.' + save_format, dpi = save_dpi, format = save_format, transparent = save_transparent, bbox_inches = save_bbox_inches, orientation = save_orientation)
     plt.show()
 
     if graph != 1:
@@ -48,15 +47,21 @@ def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
                      marker = comparison_graph_data_marker_type, mec = comparison_graph_data_marker_color, mew = comparison_graph_data_marker_edge_width, mfc = comparison_graph_data_marker_edge_color, ms = comparison_graph_data_marker_size,
                      alpha = comparison_graph_data_transparency, aa = antialiased)
 
-            patch_1 = mpatches.Patch(color = comparison_graph_data_line_color, label= r'\textrm{\textnormal{Data}}')
-            patch_2 = mpatches.Patch(color = comparison_graph_equation_line_color, label= eq)
+
+            if latex == True:
+                patch_1 = mpatches.Patch(color = comparison_graph_data_line_color, label = r'\textrm{\textnormal{' + data_graph_title + '}}')
+                patch_2 = mpatches.Patch(color = comparison_graph_equation_line_color, label = eq)
+            else:
+                patch_1 = mpatches.Patch(color = comparison_graph_data_line_color, label = data_graph_title)
+                patch_2 = mpatches.Patch(color = comparison_graph_equation_line_color, label = eq)
+
 
             plt.legend(handles=[patch_1, patch_2])
 
             plt.xlabel('$' + v_x + "(" + u_x + ")" + '$')
             plt.ylabel('$' + v_y + "(" + u_y + ")" + '$')
 
-            plt.savefig('comparison.' + save_format, dpi = save_dpi, frameon = save_frameon, format = save_format, transparent = save_transparent, bbox_inches = save_bbox_inches, orientation = save_orientation)
+            plt.savefig('comparison.' + save_format, dpi = save_dpi, format = save_format, transparent = save_transparent, bbox_inches = save_bbox_inches, orientation = save_orientation)
             plt.show()
 
 def D(max_v, min_v):
