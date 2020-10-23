@@ -11,10 +11,10 @@ from configuration import *
 def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
     if latex == True:
         try:
-            rc('font',**{'family':font_family,font_family:[font]})
-            rc('text', usetex=True)
-            rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
-            rcParams['axes.labelsize'] = 15
+            rc('text', usetex = True)
+            rc('font',**{'family':font_family, font_family:[font], 'size':font_size})
+            rcParams['text.latex.preamble'] = [r"\usepackage{amsmath}"]
+            rcParams['axes.labelsize'] = label_font_size
         except IndexError:
             print("Make sure that latex is installed in your machine including the amsmath package or disable latex in the configuration.py file.")
 
