@@ -48,7 +48,7 @@ and execute it with:
 
 It's recommended to add the data in a .csv file, where a row is the data of a variable, like you can see in the following image:
 
-<img src="https://raw.github.com/index-0/Regresion/master/Images/csv.png" alt=".csv file example" width="550" height="94">
+<img src="https://raw.github.com/index-0/Regresion/master/images/csv.png" alt=".csv file example" width="550" height="94">
 
 To execute the script with the .csv file:
 
@@ -66,7 +66,7 @@ If you want to use 'x' in the y axis then input 'x' in the second prompt.
 
 3.1.- In case that a .csv file wasn't given, you will need to input the data manually
 
-<img src="https://raw.github.com/index-0/Regresion/master/Images/1.png" alt="Input of data" width="550" height="298">
+<img src="https://raw.github.com/index-0/Regresion/master/images/1.png" alt="Input of data" width="550" height="298">
 
 4.- Input the unit of the variables
 
@@ -74,7 +74,7 @@ If the unit of the first variable (x axis) are seconds then input 's' or 'second
 
 5.- Graph of the given data (Optional)
 
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_1.png)
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/images/figure_1.png)
 
 6.- Choice the equation y(x) or x(y)
 
@@ -90,5 +90,5 @@ If you want to compute the equation y(x) then input '1' or if you want to comput
 
 9.- A .csv file will be saved in the script directory
 
-<img src="https://raw.github.com/index-0/Regresion/master/Images/saved_csv_file.png" alt="Saved csv file" width="784" height="618">
+<img src="https://raw.github.com/index-0/Regresion/master/images/saved_csv_file.png" alt="Saved csv file" width="784" height="618">
 

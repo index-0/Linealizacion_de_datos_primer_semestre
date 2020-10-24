@@ -193,7 +193,7 @@ def linear(d):
         if b > 0:
             eq = "$\ " + d['v_y'] + " = " + str(round(a, 4)) + d['v_x'] + " + " + str(round(b, 4)) + "$"
         elif b < 0:
-            eq = "$\ " + d['v_y'] + " = " + str(round(a, 4)) + d['v_x'] + " " + str(round(b)) + "$"
+            eq = "$\ " + d['v_y'] + " = " + str(round(a, 4)) + d['v_x'] + " " + str(round(b, 4)) + "$"
         else:
             eq = "$\ " + d['v_y'] + " = " + str(round(a, 4)) + d['v_x'] + "$"
 
