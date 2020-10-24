@@ -7,9 +7,8 @@
 - Math
 
 ##### Optional
-Follow the instructions that are in the next link to add text rendering support with LaTeX:
-
-http://matplotlib.org/users/usetex.html
+For latex support:
+"Matplotlib's LaTeX support requires a working LaTeX installation, dvipng (which may be included with your LaTeX installation), and Ghostscript (GPL Ghostscript 9.0 or later is required). The executables for these external dependencies must all be located on your PATH."
 
 # Guide
 ## Example 1
@@ -82,11 +81,11 @@ If you want to compute the equation y(x) then input '1' or if you want to comput
 
 7.- Graph of the equation (Optional)
 
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_2.png)
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/images/figure_2.png)
 
 8.- Graph of the comparison (Optional)
 
-![ScreenShot](https://raw.github.com/index-0/Regresion/master/Images/figure_3.png)
+![ScreenShot](https://raw.github.com/index-0/Regresion/master/images/figure_3.png)
 
 9.- A .csv file will be saved in the script directory
 
