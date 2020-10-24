@@ -12,17 +12,23 @@ def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
     if latex == True:
         try:
             rc('text', usetex = True)
-            rc('font',**{'family':font_family, font_family:[font], 'size':font_size})
-            rcParams['text.latex.preamble'] = [r"\usepackage{amsmath}"]
-            rcParams['axes.labelsize'] = label_font_size
+            rc('font',**{'family':font_family, font_family:[font]})
+            # rcParams['text.latex.preamble'] = [r"\usepackage{amsmath}"]
+            # rcParams['text.latex.preamble'] = [r"\usepackage{siunitx}"] # A comprehensive (SI) units package.
         except IndexError:
             print("Make sure that latex is installed in your machine including the amsmath package or disable latex in the configuration.py file.")
+
+    rcParams['font.size']       = font_size
+    rcParams['legend.fontsize'] = legend_font_size
+    rcParams['axes.labelsize']  = label_font_size
+    rcParams['figure.figsize']  = (fig_width, fig_height)
 
     if graph == 1:
         plt.plot(x, y,
                  ls = data_graph_line_type, color = data_graph_line_color, lw = data_graph_line_width,
                  marker = data_graph_marker_type, mec = data_graph_marker_color, mew = data_graph_marker_edge_width, mfc = data_graph_marker_edge_color, ms = data_graph_marker_size,
                  alpha = data_graph_transparency, aa = antialiased)
+
         plt.xlabel('$' + v_x + "(" + u_x + ")" + '$')
         plt.ylabel('$' + v_y + "(" + u_y + ")" + '$')
         plt.savefig('data.' + save_format, dpi = save_dpi, format = save_format, transparent = save_transparent, bbox_inches = save_bbox_inches, orientation = save_orientation)
@@ -49,21 +55,23 @@ def draw_graph(x, y, graph, eq, v_x, v_y, u_x, u_y):
 
 
             if latex == True:
-                patch_1 = mpatches.Patch(color = comparison_graph_data_line_color, label = r'\textrm{\textnormal{' + data_graph_title + '}}')
+                patch_1 = mpatches.Patch(color = comparison_graph_data_line_color, label = r'\textnormal{' + data_graph_title + '}')
                 patch_2 = mpatches.Patch(color = comparison_graph_equation_line_color, label = eq)
+                plt.xlabel('$' + v_x + '(' + u_x + ')$')
+                plt.ylabel('$' + v_y + '(' + u_y + ')$')
             else:
                 patch_1 = mpatches.Patch(color = comparison_graph_data_line_color, label = data_graph_title)
                 patch_2 = mpatches.Patch(color = comparison_graph_equation_line_color, label = eq)
-
+                plt.xlabel(v_x + "(" + u_x + ")")
+                plt.ylabel(v_y + "(" + u_y + ")")
 
             plt.legend(handles=[patch_1, patch_2])
 
-            plt.xlabel('$' + v_x + "(" + u_x + ")" + '$')
-            plt.ylabel('$' + v_y + "(" + u_y + ")" + '$')
 
             plt.savefig('comparison.' + save_format, dpi = save_dpi, format = save_format, transparent = save_transparent, bbox_inches = save_bbox_inches, orientation = save_orientation)
             plt.show()
 
+# TODO: A better solution for this.
 def D(max_v, min_v):
     v = []
     AB = max_v - min_v
@@ -87,13 +95,11 @@ def D(max_v, min_v):
         v = arange(min_v, max_v, 10000)
     return v
 
-
 def csv_file(rows):
     with open('data.csv', 'w', encoding = 'utf8') as csvfile:
         writer = csv.writer(csvfile)
         for row in rows:
             writer.writerow(row)
-
 
 def row_maker(v, x, y, ln_x, ln_y, ln_xy, ln_v_squared, v_x, v_y):
     x.insert(0, v_x)
@@ -104,4 +110,3 @@ def row_maker(v, x, y, ln_x, ln_y, ln_xy, ln_v_squared, v_x, v_y):
     ln_v_squared.insert(0, 'ln(' + v + ')²')
     rows = zip(x, y, ln_x, ln_y, ln_xy, ln_v_squared)
     return rows
-

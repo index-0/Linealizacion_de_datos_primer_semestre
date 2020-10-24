@@ -63,7 +63,7 @@ def power(d):
         print('The exponent (n) is: ' + C1 + str(m) + CE)
         print('The constant (a) is: ' + C1 + str(a) + CE)
 
-        eq = "$\ " + d['v_y'] + " = " + str(a) + d['v_x'] + "^{"+ str(m) + '}$'
+        eq = "$\ " + d['v_y'] + " = " + str(round(a, 4)) + d['v_x'] + "^{"+ str(round(m, 4)) + '}$'
         grafica = input(C3 + 'Do you want to graph the equation? (y/n) ' + CE)
         if grafica == 'y':
             val_p = input(C3 + 'Do you want to input custom values? (y/n) ' + CE)
@@ -116,7 +116,7 @@ def power(d):
         print('The exponent (n) is: ' + C1 + str(m) + CE)
         print('The constant (a) is: ' + C1 + str(a) + CE)
 
-        eq = "$\ " + d['v_x'] + " = " + str(a) + d['v_y'] + " ^{"+ str(m) + '}$'
+        eq = "$\ " + d['v_x'] + " = " + str(round(a, 4)) + d['v_y'] + " ^{"+ str(round(m, 4)) + '}$'
         grafica = input(C3 + 'Do you want to graph the equation? (y/n) ' + CE)
         if grafica == 'y':
             val_p = input(C3 + 'Do you want to input custom values? (y/n) ' + CE)
@@ -191,11 +191,11 @@ def linear(d):
         print('The bisection (b) is: ' + C1 + str(b) + CE)
 
         if b > 0:
-            eq = "$\ " + d['v_y'] + " = " + str(a) + d['v_x'] + " + " + str(b) + "$"
+            eq = "$\ " + d['v_y'] + " = " + str(round(a, 4)) + d['v_x'] + " + " + str(round(b, 4)) + "$"
         elif b < 0:
-            eq = "$\ " + d['v_y'] + " = " + str(a) + d['v_x'] + " " + str(b) + "$"
+            eq = "$\ " + d['v_y'] + " = " + str(round(a, 4)) + d['v_x'] + " " + str(round(b)) + "$"
         else:
-            eq = "$\ " + d['v_y'] + " = " + str(a) + d['v_x'] + "$"
+            eq = "$\ " + d['v_y'] + " = " + str(round(a, 4)) + d['v_x'] + "$"
 
         grafica = input(C3 + 'Do you want to graph the equation? (y/n) ' + CE)
         if grafica == 'y':

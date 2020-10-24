@@ -13,14 +13,19 @@ font_family = 'serif'
 # Sans-serif fonts = ['Helvetica', 'Avant Garde', 'Computer Modern Sans serif']
 # Cursive fonts = ['Zapf Chancery']
 # Monospace fonts = ['Courier', 'Computer Modern Typewriter']
-font = 'Computer Modern Roman'
-font_size = 12
-label_font_size = 12
+font = 'Times'
+font_size = 8
+legend_font_size = 8
+label_font_size = 8
+
+# Figure size #
+fig_width  = 6.4 * 0.5449390625                              # Width of the figure in inches.  (float)
+fig_height = 4.8 * 0.5449390625                              # Height of the figure in inches. (float)
 
 # Scale factors #
-line_width   = 1.2
-marker_size  = 1.2
-marker_width = 1.2
+line_width   = 1
+marker_size  = 1
+marker_width = 1
 
 # Data graph #
 data_graph_title = 'Data'                                    # Title of the label for the data graph.
